@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="GartenCenter.Views.FruitView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GartenCenter.Views"
+             mc:Ignorable="d" 
+             Background="#e2fcc2"
+             d:DesignHeight="600" 
+             d:DesignWidth="725">
+
+
+
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--// Seitentitel-->
+        <TextBlock Grid.Row="0"  Grid.Column="2"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   FontSize="50"
+                   FontFamily="/Fonts/Roboto-Light.ttf #Roboto"
+                   Foreground="PaleVioletRed"
+                   Margin="0,0,20,0"
+                   >
+            Obstbäume
+        </TextBlock>
+
+        <!--Hinzufügen-->
+        <Button Grid.Column="0" Grid.Row="1"                
+                x:Name="AddFruit"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                 Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="50"
+                Height="50"
+                Margin="20,20,20,120"
+                
+                ToolTip="Hinzufügen" RenderTransformOrigin="0.4,-0.917"
+                >
+            <StackPanel>
+                <Image Source="/Assets/plus.png" />
+            </StackPanel>
+        </Button>
+
+        <!--Löschen-->
+        <Button Grid.Column="0" Grid.Row="1"                
+                x:Name="RemoveFruit"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                 Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="50"
+                Height="50"
+                Margin="20,20,20,20"
+                
+                ToolTip="Löschen" RenderTransformOrigin="0.4,-0.917"
+                >
+            <StackPanel>
+                <Image Source="/Assets/minus.png" />
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="1"                
+                x:Name="LoadFruit"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                 Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="50"
+                Height="50"
+                Margin="20,20,20,80"
+                VerticalAlignment="Bottom"
+                
+                ToolTip="Laden" RenderTransformOrigin="0.4,-0.917"
+                >
+            <StackPanel>
+                <Image Source="/Assets/load.png" />
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="1"                
+                x:Name="SaveFruit"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                 Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="50"
+                Height="50"
+                Margin="20,20,20,20"
+                VerticalAlignment="Bottom"
+                ToolTip="Speichern" RenderTransformOrigin="0.4,-0.917"
+                >
+            <StackPanel>
+                <Image Source="/Assets/save.png" />
+            </StackPanel>
+        </Button>
+
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                    VerticalAlignment="Center"
+                    >
+            <Label>
+                Name
+            </Label>
+            <TextBox x:Name="TreeName"/>
+            <Label>
+                Höhe (m)
+            </Label>
+            <TextBox x:Name="TreeHeight"/>
+            <Label>
+                Fruchtgeschmack
+            </Label>
+            <DockPanel>
+                <CheckBox x:Name="Sweet" Content="Süß" />
+                <CheckBox x:Name="Sour" Content="Sauer" />
+            </DockPanel>
+
+        </StackPanel>
+
+        <!--// Ausgabe Inhalt-->
+        <DataGrid x:Name="Obst" Background="#e2fcc2" CanUserAddRows="False" BorderBrush="Transparent" HeadersVisibility="Column"
+                  AutoGenerateColumns="False" Grid.Row="1" Grid.Column="2" Margin="50 50"
+                  SelectedItem="{Binding Path=SelectedFruit}"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=TreeName}" />
+                <DataGridTextColumn Header="Höhe   (m)" Binding="{Binding Path=PlantHeight}" />
+                <DataGridCheckBoxColumn Header="Süß" Binding="{Binding Path=Sweet}" />
+                <DataGridCheckBoxColumn Header="Sauer" Binding="{Binding Path=Sour}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,180 @@
+﻿<Window x:Class="GartenCenter.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GartenCenter.Views"
+        mc:Ignorable="d"  FontSize="20" WindowStartupLocation="CenterScreen"
+        Title="Garten - Center A.P.I" Height="600" Width="800"  
+        >
+
+    <Window.Resources>
+
+        <!--Text Font style-->
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" 
+                      BorderThickness="0"
+                      Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter Margin="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="font_style" TargetType="TextBlock">
+
+            <Setter Property="FontFamily"
+                    Value="/Fonts/Roboto-Light.ttf #Roboto" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="FontSize"
+                    Value="20" />
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#e2fcc2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="65" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="65" />
+        </Grid.ColumnDefinitions>
+
+
+        <!--Menu-->
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="3"
+                    Background="#99ed72"
+                    >
+
+            <Image 
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,50"
+                HorizontalAlignment="Left" 
+                Source="/Assets/Tree.png" 
+                ToolTip="Herzlich Willkommen"                
+                />
+
+            <Button 
+                x:Name="LoadHome"
+                Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,20"
+                HorizontalAlignment="Left" 
+                ToolTip="Home"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    >
+                <StackPanel>
+                    <Image Source="/Assets/home.png" />
+                </StackPanel>
+            </Button>
+
+            <Button 
+                x:Name="LoadFruit"
+                Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,20"
+                HorizontalAlignment="Left" 
+                ToolTip="Obstbäume"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    >
+                <StackPanel>
+                    <Image Source="/Assets/fruit.png" />
+                </StackPanel>
+            </Button>
+
+            <Button 
+                x:Name="LoadPlant"
+                Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,20"
+                HorizontalAlignment="Left" 
+                ToolTip="Zimmerpflanzen"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    >
+                <StackPanel>
+                    <Image Source="/Assets/plant.png" />
+                </StackPanel>
+            </Button>
+
+            <Button 
+                x:Name="LoadFlower"
+                Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,140"
+                HorizontalAlignment="Left" 
+                ToolTip="Blütenpflanzen"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    >
+                <StackPanel>
+                    <Image Source="/Assets/flower.png" />
+                </StackPanel>
+            </Button>
+
+            <Button 
+                x:Name="QuitApp"
+                Background="Transparent"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Width="30"
+                Height="30"
+                VerticalAlignment="Center"                
+                Margin="18,20,0,50"
+                HorizontalAlignment="Left" 
+                ToolTip="Exit"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    >
+                <StackPanel>
+                    <Image Source="/Assets/exit.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="50"                   
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Style="{StaticResource font_style}"
+                   >
+            A.P.I
+        </TextBlock>
+
+        <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" x:Name="ActiveItem" />
+
+
+    </Grid>
+</Window>
