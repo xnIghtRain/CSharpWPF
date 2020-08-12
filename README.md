@@ -1,5 +1,5 @@
 # CSharpWPF
 App per C# WPF
 
-![Blumenpflanzen](/IMG/Flower.jpg)
-![Zimmerpflanzen](/IMG/Plant.jpg)
+![Blumenpflanzen](/IMG/Flower.jpg =250x250)
+![Zimmerpflanzen](/IMG/Plant.jpg =250x250)
