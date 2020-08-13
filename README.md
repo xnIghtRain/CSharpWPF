@@ -16,6 +16,6 @@
   * Laden/Speichern der Daten möglich
 
 ![Blumenpflanzen](/images/flower.jpg)
-![Zimmerpflanzen](/images/plant.jpg)
+![Zimmerpflanzen](/images/plants.jpg)
 
 
