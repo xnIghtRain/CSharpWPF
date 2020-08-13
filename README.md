@@ -1,8 +1,21 @@
 # CSharpWPF
-App per C# WPF
-https://guides.github.com/features/mastering-markdown/
 
-![Blumenpflanzen](/IMG/Flower.jpg)
-![Zimmerpflanzen](/IMG/Plant.jpg)
+## WPF App
 
-![](/IMG/Plant.jpg | width=100)
+
+### Aufgabe
+* Konsolen-App für eine Gärtnerei
+  * Verwaltung von 3 verschiedene Pflanzenarten
+  * mit vorgegebenen Attribute z.Bsp : Standort, Winterhart usw.
+  
+### Umsetzung
+* WPF App
+  * MVVM 
+  * Caliburn Micro
+* Eingabe wird in eine Liste gespeichert
+  * Laden/Speichern der Daten möglich
+
+![Blumenpflanzen](/images/flower.jpg)
+![Zimmerpflanzen](/images/plant.jpg)
+
+
